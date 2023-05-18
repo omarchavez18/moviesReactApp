@@ -1,0 +1,40 @@
+.titleSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99%;
+  color: white;
+  section {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nameAndLogo {
+  width: 55%;
+  justify-content: end;
+}
+
+.login {
+  width: 45%;
+  justify-content: end;
+  gap: 0.5rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.login > a:hover {
+  color: #ffc107;
+}
+
+.login > a > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.login > a > p {
+  margin: 0;
+}
