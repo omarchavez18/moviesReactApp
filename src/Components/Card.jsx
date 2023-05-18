@@ -18,7 +18,7 @@ const Card = () => {
             bulk of the card's content.
           </p>
           <Hyperlink href='' className='btn btn-primary mt-2'>
-            Watch Movie
+            star
           </Hyperlink>
         </div>
       </div>
