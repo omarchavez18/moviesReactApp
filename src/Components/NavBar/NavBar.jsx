@@ -37,7 +37,13 @@ const NavBar = () => {
       {/* SEARCH BAR SECTION */}
       <div className='container w-50 m-0'>
         <form className={`d-flex ${searchStyles.search} `} role='search'>
-          <Input />
+          <Input
+            style={{ 'border-radius': '5.5rem' }}
+            className={` form-control me-2`}
+            type={'search'}
+            placeholder='Search planets, stars maybe aliens...?'
+            aria-label='Search'
+          />
           <Button className={'btn btn-outline-warning'}>Search</Button>
         </form>
       </div>
