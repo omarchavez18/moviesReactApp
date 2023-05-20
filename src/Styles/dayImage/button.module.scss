@@ -1,0 +1,41 @@
+/*** ESTILOS BOTÓN SLIDE LEFT ***/
+.dayImgBtn {
+  background: none; /* color de fondo */
+  color: #0066b2; /* color de fuente */
+  border: 1.5px solid #0066b2; /* tamaño y color de borde */
+  padding-right: 1rem;
+  padding-top: 0.12rem;
+  border-radius: 10%; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  width: 5rem;
+  height: 2.2rem;
+  margin-left: 0.5rem;
+}
+.dayImgBtn:hover {
+  color: #fff; /* color de fuente hover */
+}
+.dayImgBtn::after {
+  content: '';
+  background: #0066b2; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.dayImgBtn:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
