@@ -1,13 +1,10 @@
 import React from 'react'
 
-const Input = () => {
+const Input = ({ className, type, children, ...otherInfo }) => {
   return (
-    <input
-      className='form-control me-2'
-      type='search'
-      placeholder='Search planets, stars maybe aliens...?'
-      aria-label='Search'
-    />
+    <input className={className} type={type} {...otherInfo}>
+      {children}
+    </input>
   )
 }
 
