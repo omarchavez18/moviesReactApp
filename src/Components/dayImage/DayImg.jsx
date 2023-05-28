@@ -39,6 +39,7 @@ const DayImg = () => {
         <Input
           className={stylesimg.input}
           type='date'
+          required
           min={'1995-06-16'}
           name='search'
           placeholder='Example: 2021-08-18'
