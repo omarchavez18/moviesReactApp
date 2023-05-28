@@ -38,13 +38,13 @@ const NavBar = () => {
       <div className='container w-50 m-0'>
         <form className={`d-flex ${searchStyles.search} `} role='search'>
           <Input
-            style={{ 'border-radius': '5.5rem' }}
+            style={{ borderRadius: '5.5rem' }}
             className={` form-control me-2`}
             type={'search'}
             placeholder='Search planets, stars maybe aliens...?'
             aria-label='Search'
           />
-          <Button className={'btn btn-outline-warning'}>Search</Button>
+          <Button className={'btn btn-outline-primary'}>Search</Button>
         </form>
       </div>
 
@@ -64,8 +64,16 @@ const NavBar = () => {
         <div className='collapse navbar-collapse' id='navmenu'>
           <ul className={`navbar-nav ms-auto `}>
             <LI className={'nav-item'}>
-              <NavLink to='/' className={`nav-link ${styles.hyperlink}`}>
-                Stars
+              <NavLink
+                to='/DayImage'
+                className={`nav-link ${styles.hyperlink}`}
+              >
+                Home
+              </NavLink>
+            </LI>
+            <LI className={'nav-item'}>
+              <NavLink to='/Card' className={`nav-link ${styles.hyperlink}`}>
+                Card
               </NavLink>
             </LI>
             <LI className={`nav-item `}>
