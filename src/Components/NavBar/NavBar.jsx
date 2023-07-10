@@ -1,17 +1,28 @@
 import React from 'react'
+import { useState } from 'react'
 import { GoPerson } from 'react-icons/go'
 import Button from './Button'
 import Input from './Input'
 import Logo from './Logo'
 import LI from './Li'
-import Hyperlink from './Hyperlink'
+import { NavLink } from 'react-router-dom'
 import navStyles from '../../Styles/NavBar/nav.module.scss'
 import styles from '../../Styles/NavBar/hyperlink.module.scss'
 import searchStyles from '../../Styles/NavBar/search.module.scss'
 import titleSectionStyles from '../../Styles/NavBar/titleSection.module.scss'
-import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
+  const [topicToSearch, setTopicToSearch] = useState('')
+
+  function searchTopic(e) {
+    setTopicToSearch(e.target.value)
+  }
+
+  //this exit the login
+  function logout() {
+    localStorage.clear()
+    window.location.reload()
+  }
   return (
     <nav
       className={` navbar navbar-expand-lg bg-dark p-3 fixed-to ${navStyles.nav}`}
@@ -25,12 +36,10 @@ const NavBar = () => {
 
         {/* LOGIN SECTION WITH USER ICON */}
         <section className={`${titleSectionStyles.login}`}>
-          <Hyperlink href='.'>
+          <Button className={'btn btn-outline-primary'} onClick={logout}>
             <GoPerson />
-          </Hyperlink>
-          <Hyperlink href='.'>
-            <p>Login</p>
-          </Hyperlink>
+            LogOut
+          </Button>
         </section>
       </div>
 
@@ -43,6 +52,8 @@ const NavBar = () => {
             type={'search'}
             placeholder='Search planets, stars maybe aliens...?'
             aria-label='Search'
+            value={topicToSearch}
+            onChange={searchTopic}
           />
           <Button className={'btn btn-outline-primary'}>Search</Button>
         </form>
@@ -68,12 +79,15 @@ const NavBar = () => {
                 to='/DayImage'
                 className={`nav-link ${styles.hyperlink}`}
               >
-                Home
+                Home |
               </NavLink>
             </LI>
             <LI className={'nav-item'}>
-              <NavLink to='/Card' className={`nav-link ${styles.hyperlink}`}>
-                Card
+              <NavLink
+                to='/marsRoverPhotos'
+                className={`nav-link ${styles.hyperlink}`}
+              >
+                Mars Rover Photos |
               </NavLink>
             </LI>
             <LI className={`nav-item `}>
@@ -83,14 +97,6 @@ const NavBar = () => {
               >
                 Planets
               </NavLink>
-            </LI>
-            <LI className={'nav-item'}>
-              <Hyperlink
-                href={'#about'}
-                className={`nav-link ${styles.hyperlink}`}
-              >
-                About Us
-              </Hyperlink>
             </LI>
           </ul>
         </div>
