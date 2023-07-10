@@ -43,7 +43,7 @@ const DayImg = () => {
           min={'1995-06-16'}
           name='search'
           placeholder='Example: 2021-08-18'
-        ></Input>
+        />
         <Button className={styles.dayImgBtn} type='submit'>
           Search
         </Button>

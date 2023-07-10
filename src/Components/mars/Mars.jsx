@@ -8,7 +8,7 @@ import stylesimg from '../../Styles/dayImage/searchImg.module.scss'
 import stylescards from '../../Styles/cards/cards.module.scss'
 import LI from '../NavBar/Li'
 
-const Cards = () => {
+const Mars = () => {
   let [data, setData] = useState([])
   const [searchDate, setSearchDate] = useState('')
   const [roverCamera, setRoverCamera] = useState('')
@@ -63,10 +63,9 @@ const Cards = () => {
           className={stylesimg.input}
           type='date'
           required
-          //   min={'2012-11-01'}
           name='searchDate'
           placeholder='Example: 2021-08-18'
-        ></Input>
+        />
 
         {/* CHOOSE A ROVER CAMERA OPTION */}
         <label className={stylescards.label} htmlFor='roverCamera-select'>
@@ -90,7 +89,6 @@ const Cards = () => {
                 {
                   <Card
                     clasName={`${stylescards.img} ${'card-img-top'}  `}
-                    key={i}
                     src={info.img_src}
                     title={info.camera.full_name}
                   >
@@ -110,4 +108,4 @@ const Cards = () => {
   )
 }
 
-export default Cards
+export default Mars
