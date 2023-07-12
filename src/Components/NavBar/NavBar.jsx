@@ -1,21 +1,28 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { useNavigate, NavLink } from 'react-router-dom'
 import { GoPerson } from 'react-icons/go'
 import Button from './Button'
 import Input from './Input'
 import Logo from './Logo'
 import LI from './Li'
-import { NavLink } from 'react-router-dom'
 import navStyles from '../../Styles/NavBar/nav.module.scss'
 import styles from '../../Styles/NavBar/hyperlink.module.scss'
 import searchStyles from '../../Styles/NavBar/search.module.scss'
 import titleSectionStyles from '../../Styles/NavBar/titleSection.module.scss'
+import { Container } from '../App'
 
 const NavBar = () => {
-  const [topicToSearch, setTopicToSearch] = useState('')
+  const navigate = useNavigate()
+  const [inputValue, setInputValue] = useState('')
+  const { topicToSearch, setTopicToSearch } = useContext(Container)
 
   function searchTopic(e) {
-    setTopicToSearch(e.target.value)
+    setInputValue(e.target.value)
+  }
+
+  //this is to prevent the active search of the useEffect while topicToSearch changes
+  function handleConfirm() {
+    setTopicToSearch(inputValue)
   }
 
   //this exit the login
@@ -23,9 +30,17 @@ const NavBar = () => {
     localStorage.clear()
     window.location.reload()
   }
+
+  //function to navigate to component search
+  function handleSearch(e) {
+    e.preventDefault()
+    topicToSearch !== '' && navigate('/Search')
+    handleConfirm()
+  }
+
   return (
     <nav
-      className={` navbar navbar-expand-lg bg-dark p-3 fixed-to ${navStyles.nav}`}
+      className={`navbar navbar-expand-lg bg-dark p-3 fixed-to ${navStyles.nav}`}
     >
       {/* LOGO AND NASA NAME */}
       <div className={`${titleSectionStyles.titleSection}`}>
@@ -52,10 +67,17 @@ const NavBar = () => {
             type={'search'}
             placeholder='Search planets, stars maybe aliens...?'
             aria-label='Search'
-            value={topicToSearch}
+            value={inputValue}
             onChange={searchTopic}
           />
-          <Button className={'btn btn-outline-primary'}>Search</Button>
+
+          <Button
+            disabled={!inputValue}
+            onClick={handleSearch}
+            className={'btn btn-outline-primary'}
+          >
+            Search
+          </Button>
         </form>
       </div>
 
@@ -75,11 +97,16 @@ const NavBar = () => {
         <div className='collapse navbar-collapse' id='navmenu'>
           <ul className={`navbar-nav ms-auto `}>
             <LI className={'nav-item'}>
+              <NavLink to='/' className={`nav-link ${styles.hyperlink}`}>
+                Home |
+              </NavLink>
+            </LI>
+            <LI className={'nav-item'}>
               <NavLink
                 to='/DayImage'
                 className={`nav-link ${styles.hyperlink}`}
               >
-                Home |
+                Day Image |
               </NavLink>
             </LI>
             <LI className={'nav-item'}>
