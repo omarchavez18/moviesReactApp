@@ -72,7 +72,7 @@ const Mars = () => {
           Choose a rover camera:
         </label>
         <select name='roverCamera' required>
-          <option value=''>--Please choose an option--</option>
+          <option value=''>--choose an option--</option>
           {cameras.map((camera) => {
             return <option key={camera}>{camera.toLowerCase()}</option>
           })}
@@ -82,7 +82,7 @@ const Mars = () => {
         </Button>
       </form>
       <ul className={stylescards.marsList}>
-        {data.map((info, i) => {
+        {data.map((info) => {
           return (
             <>
               <LI className={stylescards.liChildren}>
