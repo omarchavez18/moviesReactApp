@@ -5,7 +5,7 @@ import Input from '../NavBar/Input'
 import Button from '../NavBar/Button'
 import styles from '../../Styles/dayImage/button.module.scss'
 import stylesimg from '../../Styles/dayImage/searchImg.module.scss'
-import stylescards from '../../Styles/cards/cards.module.scss'
+import stylescards from '../../Styles/mars/mars.module.scss'
 import LI from '../NavBar/Li'
 
 const Mars = () => {
@@ -88,7 +88,8 @@ const Mars = () => {
               <LI className={stylescards.liChildren}>
                 {
                   <Card
-                    clasName={`${stylescards.img} ${'card-img-top'}  `}
+                    className={stylescards.div}
+                    classNameImg={`${stylescards.img} ${'card-img-top'}  `}
                     src={info.img_src}
                     title={info.camera.full_name}
                   >
