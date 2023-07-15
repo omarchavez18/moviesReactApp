@@ -14,6 +14,7 @@ import { Container } from '../App'
 const NavBar = () => {
   const navigate = useNavigate()
   const [inputValue, setInputValue] = useState('')
+
   const { topicToSearch, setTopicToSearch } = useContext(Container)
 
   function searchTopic(e) {
@@ -45,7 +46,7 @@ const NavBar = () => {
       {/* LOGO AND NASA NAME */}
       <div className={`${titleSectionStyles.titleSection}`}>
         <section className={`${titleSectionStyles.nameAndLogo}`}>
-          <Logo />
+          <Logo href={'http://localhost:3000/'} />
           <h1>NASA</h1>
         </section>
 
@@ -106,7 +107,7 @@ const NavBar = () => {
                 to='/DayImage'
                 className={`nav-link ${styles.hyperlink}`}
               >
-                Day Image |
+                Image of the Day |
               </NavLink>
             </LI>
             <LI className={'nav-item'}>
@@ -119,7 +120,7 @@ const NavBar = () => {
             </LI>
             <LI className={`nav-item `}>
               <NavLink
-                to={'/Carousel'}
+                to={'/Planets'}
                 className={`nav-link ${styles.hyperlink}`}
               >
                 Planets
