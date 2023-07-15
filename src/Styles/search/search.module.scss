@@ -9,4 +9,10 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+  height: 30rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  overflow-y: auto;
+  text-align: justify;
+  color: white;
 }
