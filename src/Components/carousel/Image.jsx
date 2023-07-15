@@ -1,8 +1,12 @@
 import React from 'react'
 
-function Image({ src, className, ...otherInfo }) {
+function Image({ href, src, className, ...otherInfo }) {
   // eslint-disable-next-line jsx-a11y/alt-text
-  return <img className={className} src={src} {...otherInfo} />
+  return (
+    <a href={href}>
+      <img className={className} src={src} {...otherInfo} alt='' />{' '}
+    </a>
+  )
 }
 
 export default Image
