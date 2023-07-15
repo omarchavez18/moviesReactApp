@@ -8,6 +8,7 @@ import Mars from './mars/Mars'
 import Search from './search/Search'
 import Home from './Home'
 import { useEffect, useState } from 'react'
+import Planets from './planets/Planets'
 
 export const Container = React.createContext()
 
@@ -39,6 +40,7 @@ function App() {
         <Route path='/Carousel' element={<Carousel />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/Search' element={<Search />} />
+        <Route path='/Planets' element={<Planets />} />
       </Routes>
     </Container.Provider>
   )

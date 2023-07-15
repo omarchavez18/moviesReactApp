@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 
 import { Container } from '../App'
-
+import Carousel from '../carousel/Carousel'
+import styles from './../../Styles/carousel/carousel.module.scss'
+import searchStyles from './../../Styles/search/search.module.scss'
 const Search = () => {
   const [fetchInfo, setFetchInfo] = useState('')
 
@@ -17,26 +19,30 @@ const Search = () => {
       })
   }, [apiUrl])
 
+  function getInfo(fetchInfo) {
+    let result = []
+    fetchInfo?.collection?.items?.map((info) => {
+      return result.push({
+        title: info?.data[0]?.title,
+        href: info?.links[0]?.href,
+        description: info?.data[0]?.description,
+      })
+    })
+    return result
+  }
+  getInfo(fetchInfo)
+
   return (
     <>
-      {fetchInfo ? (
-        <p>{fetchInfo?.collection?.items[0]?.data[0]?.title}</p>
-      ) : (
-        ''
-      )}
-      {fetchInfo ? (
-        <p>{fetchInfo?.collection?.items[0]?.data[0]?.description}</p>
-      ) : (
-        ''
-      )}
-      {fetchInfo ? (
-        <img
-          src={fetchInfo?.collection?.items[0]?.links[0]?.href}
-          alt='images'
+      <div className={searchStyles.containerCarousel}>
+        {/* carousel */}
+        <Carousel
+          slides={getInfo(fetchInfo)}
+          classNameCarouselBody={styles.carouselBody}
+          classNameImg={styles.img}
+          sectionTitleDescription={searchStyles.sectionTitleDescription}
         />
-      ) : (
-        ''
-      )}
+      </div>
     </>
   )
 }
