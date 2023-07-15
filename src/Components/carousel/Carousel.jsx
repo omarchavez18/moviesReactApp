@@ -11,10 +11,15 @@ function Carousel({
   const [actualSlide, setActualSlide] = useState(0)
 
   function nextSlide() {
-    setActualSlide(actualSlide + 1)
+    setActualSlide(() => {
+      return actualSlide === 99 ? 0 : actualSlide + 1
+    })
   }
+
   function previousSlide() {
-    setActualSlide(actualSlide - 1)
+    setActualSlide(() => {
+      return actualSlide === 0 ? slides.length - 1 : actualSlide - 1
+    })
   }
   return (
     <>
@@ -29,7 +34,7 @@ function Carousel({
                 key={i}
                 className={`carousel-item  ${slide === slides[0] && 'active'}`}
               >
-                <Image src={slide?.href} className={classNameImg} alt='...' />
+                {<Image src={slide?.href} className={classNameImg} alt='...' />}
               </div>
             )
           })}
@@ -59,19 +64,20 @@ function Carousel({
       </div>
 
       <section className={sectionTitleDescription}>
-        {/* description */}
+        {/* title */}
         {slides ? (
           <div>
-            <p>{slides[actualSlide]?.description}</p>
+            {}
+            <h2>{slides[actualSlide]?.title}</h2>
           </div>
         ) : (
           ''
         )}
 
-        {/* title */}
+        {/* description */}
         {slides ? (
           <div>
-            <p>{slides[actualSlide]?.title}</p>
+            <p>{slides[actualSlide]?.description}</p>
           </div>
         ) : (
           ''
@@ -82,8 +88,3 @@ function Carousel({
 }
 
 export default Carousel
-
-/* cosas por hacer:
-el boton previous va para atras pero si dan atras desde la primer imagen,
- si cambia la imagen pero el texto no actualiza
-*/
