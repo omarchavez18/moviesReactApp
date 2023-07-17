@@ -1,0 +1,51 @@
+.historyAndVideo {
+  display: flex;
+  margin-top: 0.5rem;
+}
+.history {
+  width: 90%;
+  text-align: justify;
+  color: white;
+  padding: 1.5rem;
+}
+.video {
+  width: 100%;
+}
+
+.firstImg {
+  width: 100%;
+}
+
+// astronauts images
+.astronautsTitle {
+  text-align: center;
+  color: white;
+}
+
+.container {
+  border: solid white 0.2rem;
+  display: flex;
+  margin: auto;
+  width: 37rem;
+  height: 26rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+  }
+}
+.container .img:hover {
+  cursor: crosshair;
+  width: 25rem;
+  opacity: 1;
+  filter: contrast(120%);
+}
+.container .img:not(:hover) {
+  width: 100%;
+  transition: ease-in-out 0.8s;
+}
+
