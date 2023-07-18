@@ -38,8 +38,6 @@ const Planets = () => {
     })
   })
 
-  console.log(allPlanets)
-
   function filterByText() {
     return allPlanets.filter((planet) => {
       return (
