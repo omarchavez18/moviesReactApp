@@ -11,6 +11,13 @@ import Modal from './modal/Modal'
 const Home = () => {
   const [selectedImage, setSelectedImage] = useState(null)
   const [modalVisible, setModalVisible] = useState(false)
+
+  //this function works with the modal component to send it back the value to close the modal after pressing "x" on the modal
+  function handleVisibleChange(newValue) {
+    setModalVisible(newValue)
+  }
+
+  //function to import img from the folder
   function importImages() {
     let images = []
     for (let i = 2; i <= 14; i++) {
@@ -21,6 +28,7 @@ const Home = () => {
   }
   let importedImages = importImages()
 
+  //this function pass info to modal component and allow visiblity
   function handleSelectedImg(e) {
     setSelectedImage(e.target.src)
     setModalVisible(true)
@@ -78,7 +86,7 @@ const Home = () => {
 
       {/* images of astronauts */}
       <div className={styles.container}>
-        <h3>Apollo 11 crew</h3>
+        <h2>Apollo 11 crew</h2>
         <div className={styles.astro}>
           <img src={armstrong} alt='neil armstrong' />
           <img src={aldrin} alt='buzz aldrin' />
@@ -88,7 +96,7 @@ const Home = () => {
 
       {/* apollo 11 pictures */}
       <div className={styles.divPicturesContainer}>
-        <h3>Gallery</h3>
+        <h2>Gallery</h2>
         <ul className={styles.picturesContainer}>
           {importedImages.map((img, i) => {
             return (
@@ -105,7 +113,13 @@ const Home = () => {
         </ul>
       </div>
 
-      {modalVisible && <Modal selectedImage={selectedImage} />}
+      {/* MODAL */}
+      {modalVisible && (
+        <Modal
+          onStateChange={handleVisibleChange}
+          selectedImage={selectedImage}
+        />
+      )}
     </>
   )
 }
