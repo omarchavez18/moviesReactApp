@@ -10,6 +10,7 @@ import Home from './Home'
 import { useEffect, useState } from 'react'
 import Planets from './planets/Planets'
 import SelectedPlanet from './selectedPlanet/SelectedPlanet'
+import Footer from './footer/Footer'
 
 export const Container = React.createContext()
 
@@ -49,6 +50,7 @@ function App() {
         <Route path='/Planets' element={<Planets />} />
         <Route path='/Planets/:selectedPlanet' element={<SelectedPlanet />} />
       </Routes>
+      <Footer />
     </Container.Provider>
   )
 }
