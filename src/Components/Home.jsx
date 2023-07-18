@@ -99,7 +99,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* apollo 11 pictures */}
+      {/* Gallery */}
       <div className={styles.divPicturesContainer}>
         <h2>Gallery</h2>
         <ul className={styles.picturesContainer}>
