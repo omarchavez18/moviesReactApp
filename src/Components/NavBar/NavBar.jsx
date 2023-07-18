@@ -66,7 +66,7 @@ const NavBar = () => {
             style={{ borderRadius: '5.5rem' }}
             className={` form-control me-2`}
             type={'search'}
-            placeholder='Search planets, stars maybe aliens...?'
+            placeholder='Search planets, stars, maybe aliens...?'
             aria-label='Search'
             value={inputValue}
             onChange={searchTopic}
@@ -98,7 +98,7 @@ const NavBar = () => {
         <div className='collapse navbar-collapse' id='navmenu'>
           <ul className={`navbar-nav ms-auto `}>
             <LI className={'nav-item'}>
-              <NavLink to='/' className={`nav-link ${styles.hyperlink}`}>
+              <NavLink to='/' className={`nav-link  ${styles.hyperlink}`}>
                 Home |
               </NavLink>
             </LI>
