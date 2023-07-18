@@ -17,6 +17,11 @@ const Home = () => {
     setModalVisible(newValue)
   }
 
+  //disable scroll when modal its open
+  modalVisible
+    ? (document.body.style.overflow = 'hidden')
+    : (document.body.style.overflow = 'auto')
+
   //function to import img from the folder
   function importImages() {
     let images = []
