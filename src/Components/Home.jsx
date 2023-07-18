@@ -3,10 +3,29 @@ import video from './../video/nasaApollo11.mp4'
 import armstrong from './../images/apollo11/1.webp'
 import aldrin from './../images/apollo11/15.webp'
 import collins from './../images/apollo11/16.webp'
-
 import styles from './../Styles/home/home.module.scss'
+import LI from './NavBar/Li'
+import { useState } from 'react'
+import Modal from './modal/Modal'
 
 const Home = () => {
+  const [selectedImage, setSelectedImage] = useState(null)
+  const [modalVisible, setModalVisible] = useState(false)
+  function importImages() {
+    let images = []
+    for (let i = 2; i <= 14; i++) {
+      const image = require(`./../images/apollo11/${i}.webp`)
+      images.push(image)
+    }
+    return images
+  }
+  let importedImages = importImages()
+
+  function handleSelectedImg(e) {
+    setSelectedImage(e.target.src)
+    setModalVisible(true)
+  }
+
   return (
     <>
       <div>
@@ -58,18 +77,45 @@ const Home = () => {
       </div>
 
       {/* images of astronauts */}
-      <div>
-        <h3 className={styles.astronautsTitle}>Apollo 11 Crew</h3>
-        <section className={styles.container}>
-          <Image className={styles.img} src={armstrong} />
-          <Image className={styles.img} src={aldrin} />
-          <Image className={styles.img} src={collins} />
-        </section>
+      <div className={styles.container}>
+        <h3>Apollo 11 crew</h3>
+        <div className={styles.astro}>
+          <img src={armstrong} alt='neil armstrong' />
+          <img src={aldrin} alt='buzz aldrin' />
+          <img src={collins} alt='michael collins' />
+        </div>
       </div>
 
       {/* apollo 11 pictures */}
+      <div className={styles.divPicturesContainer}>
+        <h3>Gallery</h3>
+        <ul className={styles.picturesContainer}>
+          {importedImages.map((img, i) => {
+            return (
+              <LI key={i}>
+                <Image
+                  className={styles.picture}
+                  src={img}
+                  alt=''
+                  onClick={handleSelectedImg}
+                />
+              </LI>
+            )
+          })}
+        </ul>
+      </div>
+
+      {modalVisible && <Modal selectedImage={selectedImage} />}
     </>
   )
 }
 
 export default Home
+/*
+ 2)como pasar la variable allPlanets de componente planets a componente selected planet,
+ 4) como cambiar color a navbar de la seleccion en la que este,
+ 5) url en selectedPlanets no debe tener espacios,
+ 6) en mars rovers si no hay informacion a devolver que salga un mensaje que diga que intente otra fecha u otra camara,
+ 7) en componente planet en el buscador si busca informacion pero no hay que diga que intente con otra palabra.
+
+*/
