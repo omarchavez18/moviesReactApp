@@ -1,12 +1,16 @@
 .li {
   width: 33%;
   margin: 0;
+  a {
+    text-decoration: none;
+  }
 
   div {
     margin: 0;
     width: 25rem;
     height: 30rem;
     margin-bottom: 2rem;
+    color: black;
 
     p {
       height: 8rem;
@@ -27,6 +31,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  list-style: none;
 }
 .input {
   width: 20%;

@@ -10,8 +10,8 @@ import LI from '../NavBar/Li'
 
 const Mars = () => {
   let [data, setData] = useState([])
-  const [searchDate, setSearchDate] = useState('')
-  const [roverCamera, setRoverCamera] = useState('')
+  const [searchDate, setSearchDate] = useState('2021-08-18')
+  const [roverCamera, setRoverCamera] = useState('navcam')
 
   let apiKey = 'KJLC8xavAOn0VCZNxMNvNQYRUnpArbRZs25D3HZu'
   const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${searchDate}&camera=${roverCamera}&api_key=${apiKey}`
@@ -44,7 +44,7 @@ const Mars = () => {
     <>
       <div className={stylesimg.titleContainer}>
         <h2>Mars Rover Photos.</h2>
-        <h3>Search the Image with an specific date: {searchDate}</h3>
+        <h3>Search for the Image with a specific date: {searchDate}</h3>
         <h3>
           {' '}
           Rover Camera Selected: {roverCamera} {searchDate}
@@ -59,6 +59,9 @@ const Mars = () => {
           setRoverCamera(event.target.roverCamera.value)
         }}
       >
+        <label className={stylescards.label} htmlFor='roverCamera-select'>
+          Select a date:
+        </label>
         <Input
           className={stylesimg.input}
           type='date'
@@ -73,8 +76,8 @@ const Mars = () => {
         </label>
         <select name='roverCamera' required>
           <option value=''>--choose an option--</option>
-          {cameras.map((camera) => {
-            return <option key={camera}>{camera.toLowerCase()}</option>
+          {cameras.map((camera, i) => {
+            return <option key={i}>{camera.toLowerCase()}</option>
           })}
         </select>
         <Button className={styles.dayImgBtn} type='submit'>
@@ -82,10 +85,10 @@ const Mars = () => {
         </Button>
       </form>
       <ul className={stylescards.marsList}>
-        {data.map((info) => {
+        {data.map((info, i) => {
           return (
             <>
-              <LI className={stylescards.liChildren}>
+              <LI key={i} className={stylescards.liChildren}>
                 {
                   <Card
                     className={stylescards.div}

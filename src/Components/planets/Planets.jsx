@@ -4,6 +4,7 @@ import LI from '../NavBar/Li'
 import Input from '../NavBar/Input'
 import Button from '../NavBar/Button'
 import styles from './../../Styles/planets/planets.module.scss'
+import { NavLink } from 'react-router-dom'
 
 const Planets = () => {
   const [planetsInfo, setPlanetsInfo] = useState('')
@@ -45,7 +46,6 @@ const Planets = () => {
       )
     })
   }
-  console.log(filterByText())
 
   return (
     <>
@@ -75,24 +75,28 @@ const Planets = () => {
           ? allPlanets.map((planet, i) => {
               return (
                 <LI key={i} className={styles.li}>
-                  <Card
-                    classNameImg={styles.img}
-                    src={planet.href}
-                    title={planet.title}
-                    text={planet.description}
-                  />
+                  <NavLink to={`/Planets/${planet.title}`}>
+                    <Card
+                      classNameImg={styles.img}
+                      src={planet.href}
+                      title={planet.title}
+                      text={planet.description}
+                    />
+                  </NavLink>
                 </LI>
               )
             })
           : filterByText().map((planet, i) => {
               return (
                 <LI key={i} className={styles.li}>
-                  <Card
-                    classNameImg={styles.img}
-                    src={planet.href}
-                    title={planet.title}
-                    text={planet.description}
-                  />
+                  <NavLink to={`/Planets/${planet.title}`}>
+                    <Card
+                      classNameImg={styles.img}
+                      src={planet.href}
+                      title={planet.title}
+                      text={planet.description}
+                    />
+                  </NavLink>
                 </LI>
               )
             })}

@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background-image: url(https://i.pinimg.com/originals/ea/1d/97/ea1d9797c9bf3dda7a23b238e5e4b364.jpg);
+  color: white;
+  padding: 2rem;
+  margin-top: 4.3rem;
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+  }
+  img {
+    width: 7rem;
+  }
+  a {
+    text-decoration: none;
+  }
+}

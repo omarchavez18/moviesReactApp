@@ -9,6 +9,8 @@ import Search from './search/Search'
 import Home from './Home'
 import { useEffect, useState } from 'react'
 import Planets from './planets/Planets'
+import SelectedPlanet from './selectedPlanet/SelectedPlanet'
+import Footer from './footer/Footer'
 
 export const Container = React.createContext()
 
@@ -33,6 +35,7 @@ function App() {
   return (
     <Container.Provider value={{ topicToSearch, setTopicToSearch }}>
       {showNavbar && <NavBar />}
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/DayImage' element={<DayImg />} />
@@ -41,7 +44,9 @@ function App() {
         <Route path='/Login' element={<Login />} />
         <Route path='/Search' element={<Search />} />
         <Route path='/Planets' element={<Planets />} />
+        <Route path='/Planets/:selectedPlanet' element={<SelectedPlanet />} />
       </Routes>
+      {showNavbar && <Footer />}
     </Container.Provider>
   )
 }
