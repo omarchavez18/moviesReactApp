@@ -33,13 +33,9 @@ function App() {
   }, [navigate])
 
   return (
-    <Container.Provider
-      value={{
-        topicToSearch,
-        setTopicToSearch,
-      }}
-    >
+    <Container.Provider value={{ topicToSearch, setTopicToSearch }}>
       {showNavbar && <NavBar />}
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/DayImage' element={<DayImg />} />
@@ -50,7 +46,7 @@ function App() {
         <Route path='/Planets' element={<Planets />} />
         <Route path='/Planets/:selectedPlanet' element={<SelectedPlanet />} />
       </Routes>
-      <Footer />
+      {showNavbar && <Footer />}
     </Container.Provider>
   )
 }
