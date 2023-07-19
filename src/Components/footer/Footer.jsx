@@ -2,11 +2,14 @@ import React from 'react'
 import Image from '../carousel/Image'
 import nasaLogo from './../../images/nasaLogo.png'
 import style from './../../Styles/footer/footer.module.scss'
+import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
     <div className={style.container}>
-      <Image src={nasaLogo} />
+      <NavLink to='/'>
+        <Image src={nasaLogo} />
+      </NavLink>
       <div>
         <h3>National Aeronautics and Space Administration. </h3>
         <h4>
