@@ -104,7 +104,7 @@ const NavBar = () => {
             </LI>
             <LI className={'nav-item'}>
               <NavLink
-                to='/DayImage'
+                to='/ImageOfTheDay'
                 className={`nav-link ${styles.hyperlink}`}
               >
                 Image of the Day |

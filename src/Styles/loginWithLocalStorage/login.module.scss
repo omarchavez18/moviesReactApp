@@ -21,5 +21,19 @@
 }
 .firstDiv {
   background-image: url(https://i.pinimg.com/originals/ea/1d/97/ea1d9797c9bf3dda7a23b238e5e4b364.jpg);
-  padding-bottom: 47%;
+  padding-bottom: 100%;
+}
+@media (max-width: 768px) {
+  .loginBody {
+    width: 50%;
+  }
+}
+
+@media (max-width: 375px) {
+  .firstDiv {
+    padding-bottom: 100%;
+  }
+  .loginBody {
+    width: 90%;
+  }
 }

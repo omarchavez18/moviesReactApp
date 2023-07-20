@@ -59,7 +59,7 @@ const DayImg = () => {
             {' '}
             <strong>{data.title}</strong>.
           </p>
-          <p>{data.explanation}</p>
+          <p className={stylesimg.explanation}>{data.explanation}</p>
           <p>
             Images Credit & Copyright: <em>{data.copyright}</em>.
           </p>

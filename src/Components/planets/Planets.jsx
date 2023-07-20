@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Card from '../Card'
 import LI from '../NavBar/Li'
 import Input from '../NavBar/Input'
 import Button from '../NavBar/Button'
 import styles from './../../Styles/planets/planets.module.scss'
 import { NavLink } from 'react-router-dom'
+import { Container } from '../App'
 
 const Planets = () => {
-  const [planetsInfo, setPlanetsInfo] = useState('')
   const [inputValue, setInputValue] = useState('')
   const [topicToSearch, setTopicToSearch] = useState('')
+  const { allPlanets, setSelectedPlanet } = useContext(Container)
+
+  function handleSelectedPlanet(title) {
+    setSelectedPlanet(title)
+  }
 
   function search(e) {
     setInputValue(e.target.value)
@@ -20,24 +25,6 @@ const Planets = () => {
     setTopicToSearch(inputValue)
   }
 
-  const apiUrl =
-    'https://images-api.nasa.gov/search?q=planets&description=planets&media_type=image'
-
-  useEffect(() => {
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((data) => setPlanetsInfo(data))
-  }, [])
-
-  const allPlanets = []
-  planetsInfo?.collection?.items?.map((info) => {
-    return allPlanets.push({
-      title: info?.data[0]?.title,
-      href: info?.links[0]?.href,
-      description: info?.data[0]?.description,
-    })
-  })
-
   function filterByText() {
     return allPlanets.filter((planet) => {
       return (
@@ -47,9 +34,19 @@ const Planets = () => {
     })
   }
 
+  function reducePath(string) {
+    return string
+      .split(' ')
+      .map((str) => {
+        return str[0] + str.substring(1)
+      })
+      .join('')
+      .toLowerCase()
+  }
+
   return (
     <>
-      <form style={{ margin: '1rem' }}>
+      <form className={styles.form} style={{ margin: '1rem' }}>
         <label style={{ fontSize: '1.5rem', color: 'white' }}>
           {' '}
           Search some planet:
@@ -75,12 +72,13 @@ const Planets = () => {
           ? allPlanets.map((planet, i) => {
               return (
                 <LI key={i} className={styles.li}>
-                  <NavLink to={`/Planets/${planet.title}`}>
+                  <NavLink to={`/Planets/${reducePath(planet.title)}`}>
                     <Card
                       classNameImg={styles.img}
                       src={planet.href}
                       title={planet.title}
                       text={planet.description}
+                      onCardClick={handleSelectedPlanet}
                     />
                   </NavLink>
                 </LI>
@@ -89,12 +87,13 @@ const Planets = () => {
           : filterByText().map((planet, i) => {
               return (
                 <LI key={i} className={styles.li}>
-                  <NavLink to={`/Planets/${planet.title}`}>
+                  <NavLink to={`/Planets/${reducePath(planet.title)}`}>
                     <Card
                       classNameImg={styles.img}
                       src={planet.href}
                       title={planet.title}
                       text={planet.description}
+                      onCardClick={handleSelectedPlanet}
                     />
                   </NavLink>
                 </LI>

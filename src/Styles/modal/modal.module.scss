@@ -40,3 +40,9 @@
     cursor: pointer;
   }
 }
+@media (max-width: 375px) {
+  .img.img {
+    width: 17rem;
+    height: 20rem;
+  }
+}
