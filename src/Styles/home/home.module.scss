@@ -89,3 +89,26 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .historyAndVideo {
+    flex-direction: column;
+  }
+}
+@media (max-width: 375px) {
+  .astro.astro {
+    width: 18rem;
+    height: 15rem;
+    img:hover {
+      width: 8rem;
+    }
+  }
+  .picture.picture.picture {
+    width: 10rem;
+    height: 11rem;
+  }
+  .history {
+    p {
+      font-size: small;
+    }
+  }
+}

@@ -11,3 +11,15 @@
   height: 30rem;
   border: white solid 0.1rem;
 }
+@media (max-width: 768px) {
+}
+@media (max-width: 375px) {
+  .carouselBody {
+    height: 18rem;
+    width: 95%;
+    margin: auto;
+  }
+  .img {
+    height: 17rem;
+  }
+}

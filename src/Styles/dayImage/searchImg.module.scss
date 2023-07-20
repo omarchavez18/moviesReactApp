@@ -40,3 +40,28 @@
   margin: auto;
   margin-bottom: 2rem;
 }
+@media (max-width: 768px) {
+  .imgAndInfoContainer {
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    width: 100%;
+    align-items: center;
+  }
+}
+@media (max-width: 375px) {
+  .imageStyle {
+    width: 65vw;
+    height: 25vh;
+  }
+  .imageContainer {
+    font-size: small;
+  }
+  .explanation {
+    height: 12rem;
+    overflow: hidden;
+    overflow-y: auto;
+    text-align: justify;
+  }
+}

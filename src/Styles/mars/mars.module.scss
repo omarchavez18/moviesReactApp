@@ -24,3 +24,11 @@
   margin: 1.5rem;
   width: 18rem;
 }
+@media (max-width: 375px) {
+  .marsList {
+    padding: 0;
+  }
+  .div {
+    width: 15rem;
+  }
+}

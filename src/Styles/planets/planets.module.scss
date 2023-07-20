@@ -1,5 +1,4 @@
 .li {
-  width: 33%;
   margin: 0;
   a {
     text-decoration: none;
@@ -30,10 +29,65 @@
 .ul {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   list-style: none;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 0;
+  justify-content: center;
 }
 .input {
   width: 20%;
   margin-right: 0.5rem;
+}
+@media (max-width: 375px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .input {
+    width: 70%;
+  }
+  .ul {
+    gap: 1rem;
+    padding: 0;
+    margin: auto;
+    .li {
+      margin: auto;
+
+      div {
+        width: 21rem;
+      }
+    }
+  }
+  .img {
+    height: 15rem;
+    font-size: small;
+  }
+}
+
+@media (max-width: 768px) {
+  .input {
+    width: 40%;
+  }
+
+  .ul {
+    gap: 1rem;
+    padding: 0;
+    margin: 1rem;
+
+    .li {
+      div {
+        width: 20rem;
+        height: 25rem;
+        font-size: small;
+
+        .img {
+          height: 13rem;
+        }
+      }
+    }
+  }
 }
