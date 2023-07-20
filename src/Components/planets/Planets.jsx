@@ -46,7 +46,7 @@ const Planets = () => {
 
   return (
     <>
-      <form style={{ margin: '1rem' }}>
+      <form className={styles.form} style={{ margin: '1rem' }}>
         <label style={{ fontSize: '1.5rem', color: 'white' }}>
           {' '}
           Search some planet:
