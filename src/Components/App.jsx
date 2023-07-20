@@ -70,7 +70,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/DayImage' element={<DayImg />} />
+        <Route path='/ImageOfTheDay' element={<DayImg />} />
         <Route path='/MarsRoverPhotos' element={<Mars />} />
         <Route path='/Carousel' element={<Carousel />} />
         <Route path='/Login' element={<Login />} />
