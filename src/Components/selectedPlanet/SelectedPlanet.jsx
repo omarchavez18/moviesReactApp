@@ -16,12 +16,12 @@ const SelectedPlanet = () => {
         return (
           info?.data[0]?.title === selectedPlanet && (
             <div key={i} className={styles.container}>
-              <img src={info?.links[0]?.href} alt='' />
-              <section>
+              <img className={styles.img} src={info?.links[0]?.href} alt='' />
+              <section className={styles.section}>
                 <h4>
                   <span>Title:</span> {info?.data[0]?.title}
                 </h4>
-                <p>
+                <p className={styles.description}>
                   <span>Description:</span> {info?.data[0]?.description}
                 </p>
                 <p>
