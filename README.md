@@ -27,6 +27,7 @@ To see the NASA project webpage click on the next link
 
 - HTML
 - SCSS MODULES - RESPONSIVELY
+- BOOTSTRAP
 - JAVASCRIPT
 - REACT
 - REACT-DOM
