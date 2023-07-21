@@ -10,6 +10,7 @@ import styles from '../../Styles/NavBar/hyperlink.module.scss'
 import searchStyles from '../../Styles/NavBar/search.module.scss'
 import titleSectionStyles from '../../Styles/NavBar/titleSection.module.scss'
 import { Container } from '../App'
+import nasaLogo from '../../images/nasaLogo.png'
 
 const NavBar = () => {
   const navigate = useNavigate()
@@ -46,7 +47,9 @@ const NavBar = () => {
       {/* LOGO AND NASA NAME */}
       <div className={`${titleSectionStyles.titleSection}`}>
         <section className={`${titleSectionStyles.nameAndLogo}`}>
-          <Logo href={'http://localhost:3000/'} />
+          <NavLink to='/'>
+            <Logo src={nasaLogo} />
+          </NavLink>
           <h1>NASA</h1>
         </section>
 
