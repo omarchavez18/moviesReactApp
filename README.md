@@ -1,7 +1,69 @@
+# Nasa project
+>Front end of NASA information app using React.
+
+
+
+
+To see the NASA project webpage click on the next link
+[MoviesApp](https://moviesapptmdb.netlify.app)
+
+
+## Sneak peek
+
+![0](https://github.com/omarchavez18/nasaProject/assets/84557440/ca8e5945-6995-47f2-8aa2-82b05f03808a)
+![1](https://github.com/omarchavez18/nasaProject/assets/84557440/cc4c30d1-c73b-4fe6-aeb9-d1a56ce4644f)
+![2](https://github.com/omarchavez18/nasaProject/assets/84557440/fde32df9-44ea-43c1-a9f7-a17eb51b5572)
+![3](https://github.com/omarchavez18/nasaProject/assets/84557440/c67ff04e-65de-404a-aeae-c15f9f0a1296)
+![4](https://github.com/omarchavez18/nasaProject/assets/84557440/5ac12991-a5ab-49e2-92e9-a63a724787ca)
+![5](https://github.com/omarchavez18/nasaProject/assets/84557440/d0e2bd85-64d0-474f-a080-21966051e47d)
+![6](https://github.com/omarchavez18/nasaProject/assets/84557440/b35d06af-3a5f-4a68-96e2-6fa4910058d6)
+![7](https://github.com/omarchavez18/nasaProject/assets/84557440/3129423d-64b7-42ff-a39d-62cb3eb11260)
+![8](https://github.com/omarchavez18/nasaProject/assets/84557440/3ce8cf93-9054-45f0-be64-32db4ad698d0)
+![9](https://github.com/omarchavez18/nasaProject/assets/84557440/d97c90bc-b300-4763-ae4a-e340698f08ab)
+
+## Built With
+
+- HTML
+- SCSS MODULES - RESPONSIVELY
+- JAVASCRIPT
+- REACT
+- REACT-DOM
+- CREATE-REACT-APP
+- REACT-ROUTER
+- NPM
+- NETLIFY
+
+### Description
+
+    Front end of NASA information using React.
+    
+On this website you can access the official NASA API information, it returns de images of the day, mars rover photos, a collection of cards with planets info with a filter, and information about the first moon landing of Apollo 11.
+
+    Thank you for using NASAproject App!
+
+
+
+## Prerequisites
+
+  - Internet Connection
+  - Web Browser
+  - Code Editor 
+  - Node Package Manager (NPM)
+  
+
+👤 &nbsp; **Omar Chávez**
+
+- LinkedIn: [omarchavezgdv](https://www.linkedin.com/in/omarchavezgdv/)
+- GitHub: [@omarchavez18](https://github.com/omarchavez18)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+
+
 # Getting Started with Create React App
-
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
