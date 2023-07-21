@@ -8,8 +8,8 @@ import stylesButton from './../../Styles/dayImage/button.module.scss'
 import loginStyles from '../../Styles/loginWithLocalStorage/login.module.scss'
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('john11@gmail.com')
+  const [password, setPassword] = useState('surf')
   const navigate = useNavigate()
 
   const errorMessage = validate(email, password)
@@ -68,7 +68,7 @@ const Login = () => {
           <Input
             type='password'
             name='password'
-            placeholder='Example:ferrari'
+            placeholder='surf'
             autoComplete='on'
             value={password}
             onChange={handlePassword}
