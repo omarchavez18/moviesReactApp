@@ -1,11 +1,12 @@
 # Nasa project
 >Front end of NASA information app using React.
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c316bf0c-6161-4f7d-a4ca-29a2397e92a9/deploy-status)](https://app.netlify.com/sites/nasaprojectreact/deploys)
 
 
 
 To see the NASA project webpage click on the next link
 [NASAproject](https://nasaprojectreact.netlify.app)
+
 
 
 
