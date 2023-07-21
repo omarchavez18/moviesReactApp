@@ -4,11 +4,11 @@
 
 
 
-To see t NASAproject webpage click in the next link
+To see the NASA project webpage click on the next link
 [MoviesApp](https://moviesapptmdb.netlify.app)
 
 
-## Sneak peak
+## Sneak peek
 
 ![0](https://github.com/omarchavez18/nasaProject/assets/84557440/ca8e5945-6995-47f2-8aa2-82b05f03808a)
 ![1](https://github.com/omarchavez18/nasaProject/assets/84557440/cc4c30d1-c73b-4fe6-aeb9-d1a56ce4644f)
