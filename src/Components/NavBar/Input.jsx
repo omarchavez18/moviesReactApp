@@ -1,9 +1,9 @@
 import React from 'react'
-import styles from './../../Styles/NavBar/search.module.scss'
+//import styles from './../../Styles/NavBar/search.module.scss'
 
 const Input = ({ className, type, children, ...otherInfo }) => {
   return (
-    <input className={styles.input} type={type} {...otherInfo}>
+    <input type={type} className={className} {...otherInfo}>
       {children}
     </input>
   )
