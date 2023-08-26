@@ -56,6 +56,7 @@ const Login = () => {
         <form className={`${loginStyles.form}`}>
           <label>Email:</label>
           <Input
+            className={loginStyles.input}
             type='text'
             name='email'
             placeholder='Example:john11@gmail.com'
@@ -66,6 +67,7 @@ const Login = () => {
 
           <label>Password:</label>
           <Input
+            className={`${loginStyles.input}`}
             type='password'
             name='password'
             placeholder='surf'
