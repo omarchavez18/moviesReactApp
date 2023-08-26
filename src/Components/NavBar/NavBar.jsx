@@ -67,7 +67,7 @@ const NavBar = () => {
         <form className={`d-flex ${searchStyles.search} `} role='search'>
           <Input
             style={{ borderRadius: '5.5rem' }}
-            className={` form-control me-2`}
+            className={`  ${navStyles.input}`}
             type={'search'}
             placeholder='Search planets, stars, maybe aliens...?'
             aria-label='Search'
@@ -88,7 +88,7 @@ const NavBar = () => {
       <section>
         {/* hamburger menu */}
         <Button
-          className={'navbar-toggler bg-white'}
+          className={`navbar-toggler   ${navStyles.hamburger}`}
           type='button'
           data-bs-toggle='collapse'
           data-bs-target='#navmenu'
