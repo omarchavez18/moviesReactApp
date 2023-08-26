@@ -29,8 +29,8 @@
 
   .astro {
     display: flex;
-    width: 38rem;
-    height: 27rem;
+    width: 50%;
+    height: 80vh;
     border: solid white 0.2rem;
     overflow: hidden;
     margin-bottom: 4rem;
@@ -47,7 +47,7 @@
 
     img:hover {
       cursor: crosshair;
-      width: 22rem;
+      width: 60%;
       opacity: 1;
       filter: contrast(120%);
     }
@@ -90,6 +90,9 @@
   }
 }
 @media (max-width: 768px) {
+  .astro.astro {
+    width: 70%;
+  }
   .historyAndVideo {
     flex-direction: column;
   }
