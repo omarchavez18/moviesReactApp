@@ -29,8 +29,9 @@
 
 .imageStyle {
   object-fit: cover;
-  width: 40vw;
-  height: 60vh;
+  width: 90%;
+  height: 90%;
+
   box-shadow: 16px 11px 12px black;
   border-radius: 1.5rem;
 }
@@ -39,6 +40,25 @@
   width: 85%;
   margin: auto;
   margin-bottom: 2rem;
+}
+
+.diverror {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  .tryanotherdate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 25vh;
+    border: white 0.2rem groove;
+    border-radius: 5rem;
+    text-align: center;
+    color: #fe1d26;
+    padding: 0.5rem;
+  }
 }
 @media (max-width: 768px) {
   .imgAndInfoContainer {
@@ -50,8 +70,9 @@
     align-items: center;
   }
 }
+
 @media (max-width: 375px) {
-  .imageStyle {
+  .imageStyle.imageStyle {
     width: 65vw;
     height: 25vh;
   }

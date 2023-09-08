@@ -15,7 +15,7 @@
   .img {
     display: block;
     width: 35vw;
-    height: 75vh;
+    height: 23rem;
     object-fit: contain;
     filter: contrast(130%);
     border-radius: 110px;
@@ -40,9 +40,13 @@
     cursor: pointer;
   }
 }
+@media (max-width: 768px) {
+  .img.img {
+    width: 60vw;
+  }
+}
 @media (max-width: 375px) {
   .img.img {
     width: 17rem;
-    height: 20rem;
   }
 }
