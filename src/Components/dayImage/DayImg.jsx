@@ -10,8 +10,19 @@ const DayImg = () => {
   const [search, setSearch] = useState('')
   const [data, setData] = useState([])
 
+  const [selectedDate, setSelectedDate] = useState('')
+  const [isFutureDate, setIsFutureDate] = useState(false)
+
   const ApiKey = 'KJLC8xavAOn0VCZNxMNvNQYRUnpArbRZs25D3HZu'
   const Api = `https://api.nasa.gov/planetary/apod?date=${search}&api_key=${ApiKey}`
+
+  function handleDate(e) {
+    const userDate = new Date(e.target.value)
+    const currentDate = new Date()
+
+    setSelectedDate(e.target.value)
+    setIsFutureDate(userDate > currentDate)
+  }
 
   useEffect(() => {
     fetch(Api)
@@ -33,11 +44,13 @@ const DayImg = () => {
         style={{ margin: 'auto', width: '85%' }}
         onSubmit={(event) => {
           event.preventDefault()
-          setSearch(event.target.search.value)
+          !isFutureDate && setSearch(event.target.search.value)
         }}
       >
         <Input
           className={stylesimg.input}
+          value={selectedDate}
+          onChange={handleDate}
           type='date'
           required
           min={'1995-06-16'}
@@ -48,6 +61,14 @@ const DayImg = () => {
           Search
         </Button>
       </form>
+
+      {isFutureDate && (
+        <section className={stylesimg.diverror}>
+          <div className={stylesimg.tryanotherdate}>
+            <p>Try another date between 16/06/1995 and current date </p>
+          </div>
+        </section>
+      )}
 
       <div className={stylesimg.imgAndInfoContainer}>
         <div className={stylesimg.imageContainer}>
