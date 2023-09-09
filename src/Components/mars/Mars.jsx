@@ -6,6 +6,7 @@ import Button from '../NavBar/Button'
 import styles from '../../Styles/dayImage/button.module.scss'
 import stylesimg from '../../Styles/dayImage/searchImg.module.scss'
 import stylescards from '../../Styles/mars/mars.module.scss'
+
 import LI from '../NavBar/Li'
 
 const Mars = () => {
@@ -85,28 +86,39 @@ const Mars = () => {
         </Button>
       </form>
       <ul className={stylescards.marsList}>
-        {data.map((info, i) => {
-          return (
-            <>
-              <LI key={i} className={stylescards.liChildren}>
-                {
-                  <Card
-                    className={stylescards.div}
-                    classNameImg={`${stylescards.img} ${'card-img-top'}  `}
-                    src={info.img_src}
-                    title={info.camera.full_name}
-                  >
-                    {`Rover´s name: ${info.rover.name}`}
-                    <br />
-                    {`landing date: ${info.rover.landing_date}`}
-                    <br />
-                    {`status: ${info.rover.status}`}
-                  </Card>
-                }
-              </LI>
-            </>
-          )
-        })}
+        {data.length === 0 ? (
+          <section className={stylesimg.diverror}>
+            <div className={stylesimg.tryanotherdate}>
+              <p>
+                there´s no result, try another camera or date and camera
+                combination{' '}
+              </p>
+            </div>
+          </section>
+        ) : (
+          data.map((info, i) => {
+            return (
+              <>
+                <LI key={i} className={stylescards.liChildren}>
+                  {
+                    <Card
+                      className={stylescards.div}
+                      classNameImg={`${stylescards.img} ${'card-img-top'}  `}
+                      src={info.img_src}
+                      title={info.camera.full_name}
+                    >
+                      {`Rover´s name: ${info.rover.name}`}
+                      <br />
+                      {`landing date: ${info.rover.landing_date}`}
+                      <br />
+                      {`status: ${info.rover.status}`}
+                    </Card>
+                  }
+                </LI>
+              </>
+            )
+          })
+        )}
       </ul>
     </>
   )
