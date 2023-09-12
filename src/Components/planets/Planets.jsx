@@ -6,6 +6,7 @@ import Button from '../NavBar/Button'
 import styles from './../../Styles/planets/planets.module.scss'
 import { NavLink } from 'react-router-dom'
 import { Container } from '../App'
+import stylesimg from '../../Styles/dayImage/searchImg.module.scss'
 
 const Planets = () => {
   const [inputValue, setInputValue] = useState('')
@@ -68,37 +69,45 @@ const Planets = () => {
       </form>
 
       <ul className={styles.ul}>
-        {topicToSearch === ''
-          ? allPlanets.map((planet, i) => {
-              return (
-                <LI key={i} className={styles.li}>
-                  <NavLink to={`/Planets/${reducePath(planet.title)}`}>
-                    <Card
-                      classNameImg={styles.img}
-                      src={planet.href}
-                      title={planet.title}
-                      text={planet.description}
-                      onCardClick={handleSelectedPlanet}
-                    />
-                  </NavLink>
-                </LI>
-              )
-            })
-          : filterByText().map((planet, i) => {
-              return (
-                <LI key={i} className={styles.li}>
-                  <NavLink to={`/Planets/${reducePath(planet.title)}`}>
-                    <Card
-                      classNameImg={styles.img}
-                      src={planet.href}
-                      title={planet.title}
-                      text={planet.description}
-                      onCardClick={handleSelectedPlanet}
-                    />
-                  </NavLink>
-                </LI>
-              )
-            })}
+        {topicToSearch === '' ? (
+          allPlanets.map((planet, i) => {
+            return (
+              <LI key={i} className={styles.li}>
+                <NavLink to={`/Planets/${reducePath(planet.title)}`}>
+                  <Card
+                    classNameImg={styles.img}
+                    src={planet.href}
+                    title={planet.title}
+                    text={planet.description}
+                    onCardClick={handleSelectedPlanet}
+                  />
+                </NavLink>
+              </LI>
+            )
+          })
+        ) : filterByText().length === 0 ? (
+          <section className={stylesimg.diverror}>
+            <div className={stylesimg.tryanotherdate}>
+              <p>there´s no result, try another thing</p>
+            </div>
+          </section>
+        ) : (
+          filterByText().map((planet, i) => {
+            return (
+              <LI key={i} className={styles.li}>
+                <NavLink to={`/Planets/${reducePath(planet.title)}`}>
+                  <Card
+                    classNameImg={styles.img}
+                    src={planet.href}
+                    title={planet.title}
+                    text={planet.description}
+                    onCardClick={handleSelectedPlanet}
+                  />
+                </NavLink>
+              </LI>
+            )
+          })
+        )}
       </ul>
     </>
   )

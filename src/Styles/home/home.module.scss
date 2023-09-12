@@ -1,15 +1,16 @@
 .historyAndVideo {
   display: flex;
   margin-top: 0.5rem;
+  width: 100%;
 }
 .history {
-  width: 90%;
+  width: 50%;
   text-align: justify;
   color: white;
   padding: 1.5rem;
 }
 .video {
-  width: 100%;
+  width: 50%;
 }
 
 .firstImg {
@@ -30,7 +31,7 @@
   .astro {
     display: flex;
     width: 50%;
-    height: 80vh;
+    height: 20rem;
     border: solid white 0.2rem;
     overflow: hidden;
     margin-bottom: 4rem;
@@ -47,7 +48,7 @@
 
     img:hover {
       cursor: crosshair;
-      width: 60%;
+      width: 33%;
       opacity: 1;
       filter: contrast(120%);
     }
@@ -92,9 +93,17 @@
 @media (max-width: 768px) {
   .astro.astro {
     width: 70%;
+    height: 20rem;
   }
   .historyAndVideo {
     flex-direction: column;
+  }
+
+  .history {
+    width: 100%;
+  }
+  .video {
+    width: 100%;
   }
 }
 @media (max-width: 375px) {
@@ -110,8 +119,13 @@
     height: 11rem;
   }
   .history {
+    width: 100%;
     p {
       font-size: small;
     }
+  }
+
+  .video {
+    width: 100%;
   }
 }
